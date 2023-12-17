@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&family=Dancing+Script:wght@600&family=Josefin+Sans:wght@500&family=Kaushan+Script&family=Poppins:wght@300&display=swap');* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(74, 73, 73);
+  color: white;
+  background: linear-gradient(
+      145deg,
+      rgba(0, 0, 0, 0.372) 0%,
+      rgba(78, 59, 59, 0.541) 62%,
+      rgba(53, 53, 16, 0.199) 100%
+    ),
+    url(https://www.pixelstalk.net/wp-content/uploads/images6/4K-Minimalist-HD-Wallpaper-Free-download.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#count {
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-family: 'Chakra Petch', sans-serif;
+  text-shadow:1px 1px 5px rgb(2, 254, 183),
+  1px 1px 7px rgb(4, 255, 188),
+  1px 1px 10px rgb(0, 255, 179),
+  1px 1px 15px rgb(0, 255, 247),
+  1px 1px 20px rgb(0, 247, 255);
+}
+#new{
+    font-size: 80px;
+font-family: 'Dancing Script', cursive;
+text-shadow:1px 1px 5px rgb(2, 254, 183),
+  1px 1px 7px rgb(4, 255, 188),
+  1px 1px 10px rgb(0, 255, 179),
+  1px 1px 15px rgb(0, 255, 247),
+  1px 1px 20px rgb(0, 247, 255);
+
+}
+.container {
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgba(4, 4, 4, 0.47);
+  border-radius: 20px;
+  
+}
+.box {
+  width: 200px;
+  text-align: center;
+  
+}
+.box h2 {
+  font-size: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  text-shadow:1px 1px 10px rgb(246, 254, 2),
+  1px 1px 12px rgb(255, 4, 4),
+  1px 1px 15px rgb(255, 0, 0),
+  1px 1px 20px rgb(251, 255, 0),
+  1px 1px 25px rgb(255, 0, 0);
+}
+.box span {
+  font-family: monospace;
+  font-size: 20px;
+  text-shadow:1px 1px 10px rgb(246, 254, 2),
+  1px 1px 12px rgb(255, 4, 4),
+  1px 1px 15px rgb(255, 0, 0),
+  1px 1px 20px rgb(251, 255, 0),
+  1px 1px 25px rgb(255, 0, 0);
+}
+button{
+    width: 100px;
+    height: 30px;
+}
+@media (max-width:768px) {
+    #count{
+        font-size: 25px;
+    }
+    #new{
+        font-size: 50px;
+    }
+
+    .box h2 {
+        font-size: 60px;
+      }
+    }
+    @media (max-width:576px) {
+      #count{
+        font-size: 25px;
+       
+      }
+      #new{
+                margin-bottom: 10px;
+
+        font-size: 50px;
+      }
+      .box h2 {
+        font-size: 40px;
+        text-shadow:1px 1px 3px rgb(246, 254, 2),
+  1px 1px 6px rgb(255, 4, 4),
+  1px 1px 8px rgb(255, 0, 0),
+  1px 1px 12px rgb(251, 255, 0),
+  1px 1px 15px rgb(255, 0, 0);
+        
+      }
+      .box span{
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-shadow:1px 1px 3px rgb(246, 254, 2),
+  1px 1px 6px rgb(255, 4, 4),
+  1px 1px 8px rgb(255, 0, 0),
+  1px 1px 12px rgb(251, 255, 0),
+  1px 1px 15px rgb(255, 0, 0);
+      }
+    }
+  
+
+    </style>
+    
+    <title>Counter</title>
+  </head>
+  <body>
+    <h2 id="count">Countown to</h2>
+    <h1 id="new">New Year</h1>
+    <div class="container">
+      <div class="box">
+        <h2 id="days">00</h2>
+        <span>DAYS</span>
+      </div>
+      <div class="box">
+        <h2 id="hours">00</h2>
+        <span>HOURS</span>
+      </div>
+      <div class="box">
+        <h2 id="minutes">00</h2>
+        <span>MINUTES</span>
+      </div>
+      <div class="box">
+        <h2 id="seconds">00</h2>
+        <span>SECONDS</span>
+      </div>
+    </div>
+    <script>
+        const days = document.querySelector("#days");
+const hours = document.querySelector("#hours");
+const minutes = document.querySelector("#minutes");
+const seconds = document.querySelector("#seconds");
+function UpdateTime(){
+    const currentYear=new Date().getFullYear();
+    const newYear=new Date(`January 1 ${currentYear+1} 00:00:00`);
+    const currentDate=new Date();
+    const diff = newYear - currentDate;
+    const d=Math.floor(diff/1000/60/60/24);
+    const h=Math.floor((diff/1000/60/60)%24);
+    const m=Math.floor((diff/1000/60)%60);
+    const s=Math.floor((diff/1000)%60);
+    days.innerHTML=d<10?"0"+d:d;
+    hours.innerHTML=h<10?"0"+h:h;
+    minutes.innerHTML=m<10?"0"+m:m;
+    seconds.innerHTML=s<10?"0"+s:s;
+}
+setInterval(UpdateTime,1000);
+    </script>
+  </body>
+</html>
