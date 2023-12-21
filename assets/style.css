@@ -76,6 +76,8 @@ button{
     height: 30px;
    
 }
+
+/* Animation  */
 @keyframes blink {
   0%{
     text-shadow:1px 1px 1px rgb(2, 254, 183),
@@ -90,6 +92,9 @@ button{
   1px 1px 15px rgb(0, 255, 247),
   1px 1px 20px rgb(0, 247, 255);}
 }
+
+/*Media queries  for tablet view */
+
 @media (max-width:768px) {
     #count{
         font-size: 25px;
@@ -102,6 +107,7 @@ button{
         font-size: 60px;
       }
     }
+/* Media queries  for mobile view */
     @media (max-width:576px) {
       #count{
         font-size: 18px;
