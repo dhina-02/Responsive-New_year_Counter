@@ -14,17 +14,16 @@ body {
   color: white;
   background: linear-gradient(
       145deg,
-      rgba(31, 1, 1, 0.217) 0%,
-      rgba(26, 25, 25, 0.185) 62%,
-      rgba(43, 33, 33, 0.199) 100%
+      rgba(0, 0, 0, 0.372) 0%,
+      rgba(78, 59, 59, 0.541) 62%,
+      rgba(53, 53, 16, 0.199) 100%
     ),
-    url(image/fireworks-6-usagif.gif);
+    url(image/fireworks.jpg);
 
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
- 
 }
 video{
   position: absolute;
@@ -50,7 +49,7 @@ video{
   padding: 10px;
   display: flex;
   justify-content: space-evenly;
-  background-color: rgba(63, 55, 55, 0.219);
+  background-color: rgba(70, 60, 60, 0.219);
   border-radius: 20px;
 }
 .box {
@@ -115,9 +114,12 @@ button {
   .box h2 {
     font-size: 40px;
   }
-   video{
-    display: none;
-   }
+  @media (min-aspect-ratio:16/9){
+  video{
+    width: 50%;
+    height: 100%;
+  }
+}
 }
   
 /* for video */
