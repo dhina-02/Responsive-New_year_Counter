@@ -25,13 +25,13 @@ body {
   background-size: cover;
   position: relative;
 }
-video{
+/* video{
   position: absolute;
   z-index: -10;
   overflow: hidden;
   right: 0;
   bottom: 0;
-}
+} */
 #count {
   font-size: 25px;
   letter-spacing: 5px;
@@ -114,15 +114,10 @@ button {
   .box h2 {
     font-size: 40px;
   }
-  @media (min-aspect-ratio:16/9){
-  video{
-    width: 50%;
-    height: 100%;
-  }
-}
+  
 }
   
-/* for video */
+/* for video
 @media (min-aspect-ratio:16/9){
   video{
     width: 100%;
@@ -134,4 +129,4 @@ button {
     width: auto;
     height: 100%;
   }
-}
+} */
